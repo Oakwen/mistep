@@ -1,6 +1,6 @@
 # About mistep
 
-![python](https://img.shields.io/badge/language-python-yellow.svg)  ![GitHub Workflow Status](https://img.shields.io/github/workflow/status/Oakwen/mistep/mistep?style=plastic) ![GitHub commit activity](https://img.shields.io/github/commit-activity/m/Oakwen/mistep)
+![python](https://img.shields.io/badge/language-python-yellow.svg?style=plastic)  ![GitHub Workflow Status](https://img.shields.io/github/workflow/status/Oakwen/mistep/GoStep?style=plastic) ![GitHub commit activity](https://img.shields.io/github/commit-activity/m/Oakwen/mistep?style=plastic) ![GitHub last commit](https://img.shields.io/github/last-commit/Oakwen/mistep?style=plastic) ![GitHub code size in bytes](https://img.shields.io/github/languages/code-size/Oakwen/mistep?style=plastic) ![GitHub issues](https://img.shields.io/github/issues/Oakwen/mistep?style=plastic) ![GitHub closed issues](https://img.shields.io/github/issues-closed/Oakwen/mistep?style=plastic) ![GitHub language count](https://img.shields.io/github/languages/count/Oakwen/mistep?style=plastic) ![GitHub top language](https://img.shields.io/github/languages/top/Oakwen/mistep?style=plastic)
 
 mistep 通过小米运动api刷步数。
 
