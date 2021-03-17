@@ -38,12 +38,12 @@ jobs:
           pwd='${{ secrets.PWD }}'
           step='${{ secrets.STEP }}'
 
-          python3 main.py <<EOF
-          ${msg_url}
-          ${user}
-          ${pwd}
-          ${step}
-          EOF
+       #   python3 main.py <<EOF
+       #   ${msg_url}
+       #   ${user}
+       #   ${pwd}
+       #   ${step}
+        #  EOF
 
       - name: 重置刷新时间
         run: |
