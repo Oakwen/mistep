@@ -25,7 +25,7 @@ def login(user, password):
     url1 = "https://api-user.huami.com/registrations/+86" + user + "/tokens"
     headers = {
         "Content-Type": "application/x-www-form-urlencoded;charset=UTF-8",
-        "User-Agent": "MiFit/4.6.0 (iPhone; iOS 14.0.1; Scale/2.00)"
+        "User-Agent": "MiFit/5.0.1 (iPhone; iOS 14.4.1; Scale/3.00)"
     }
     data1 = {
         "client_id": "HuaMi",
@@ -33,20 +33,19 @@ def login(user, password):
         "redirect_uri": "https://s3-us-west-2.amazonaws.com/hm-registration/successsignin.html",
         "token": "access"
     }
-    r1 = requests.post(url1, data=data1, headers=headers,
-                       allow_redirects=False)
-    location = r1.headers["Location"]
+    r1 = requests.post(url1, data=data1, headers=headers, allow_redirects=False)
     try:
+        location = r1.headers["Location"]
         code = get_code(location)
     except Exception:
         return 0, 0
-    print("access_code获取成功！")
+    # print("access_code获取成功！")
     # print(code)
 
     url2 = "https://account.huami.com/v2/client/login"
     data2 = {
         "app_name": "com.xiaomi.hm.health",
-        "app_version": "4.6.0",
+        "app_version": "5.0.1",
         "code": f"{code}",
         "country_code": "CN",
         "device_id": "2C8B4939-0CCD-4E94-8CBA-CB8EA6E613A1",
@@ -56,10 +55,10 @@ def login(user, password):
     }
     r2 = requests.post(url2, data=data2, headers=headers).json()
     login_token = r2["token_info"]["login_token"]
-    print("login_token获取成功！")
+    # print("login_token获取成功！")
     # print(login_token)
     userid = r2["token_info"]["user_id"]
-    print("userid获取成功！")
+    # print("userid获取成功！")
     # print(userid)
 
     return login_token, userid
@@ -105,7 +104,7 @@ def main(user, passwd, step):
     data = f'userid={userid}&last_sync_data_time=1597306380&device_type=0&last_deviceid=DA932FFFFE8816E7&data_json={data_json}'
 
     response = requests.post(url, data=data, headers=head).json()
-    print(response)
+    # print(response)
     result = f"{user[:4]}****{user[-4:]}: [{now}] 修改步数（{step}）" + \
              response['message']
     print(result)
@@ -141,12 +140,11 @@ def push_wx(msg_url, desp=""):
         payload = {'uid': 1000004, '小米运动 步数修改': desp}
 
         response = requests.post(msg_url, data=payload, timeout=15)
-        json_data = response.json()
-        if json_data['errno'] == 0:
-            # if response.text == '数据发送成功':
+        # json_data = response.json()
+        if response.text == '数据发送成功':
             print(f"[{now}] 推送成功。")
         else:
-            print(f"[{now}] 推送失败：{json_data['errno']}({json_data['error']})")
+            print(f"[{now}] 推送失败。")
 
 
 if __name__ == "__main__":
