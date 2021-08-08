@@ -149,7 +149,7 @@ def push_wx(msg_url, desp=""):
 
 
 if __name__ == "__main__":
-    MSG URL for wechat
+    # MSG URL for wechat
     msg_url = input()
     # 用户名（格式为 13800138000）
     user = input()
