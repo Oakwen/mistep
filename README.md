@@ -4,6 +4,8 @@
 
 mistep 通过小米运动api刷步数。
 
+**如果显示刷新成功，第三方步数不更新，请将小米运动升级到最新版本，登录后注销原账号再重新注册、重新关联第三方**
+
 添加Secrets名为：USER、PWD、STEP、MSG_URL的变量，值为用户名（手机号）、密码、步数和消息推送地址。STEP为0则为随机步数（18000-21000）。
 
 添加Secrets名为：GIT_PWD的变量，值为github token，需要有workflow读写权限，避免git push的权限错误。
