@@ -53,6 +53,7 @@ jobs:
           git config --global user.email "dai.tianwen@gmail.com"
           git add .
           git commit -m '重置下次刷新时间'
-          git remote set-url origin https://Oakwen:${git_pwd}@github.com/Oakwen/mistep.git
+          # git remote set-url origin https://Oakwen:${git_pwd}@github.com/Oakwen/mistep.git
+          git remote set-url origin https://${git_pwd}@github.com/Oakwen/mistep.git
           git push 
 
